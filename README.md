@@ -182,12 +182,77 @@ Once we're satisfied with cleaning and manipulating, we hit "Close and Apply" an
 ![insert_caption](Assets\process-1-after.png)
 *This image...*
 
+## Analyze: Find Insights, Trends and Patterns
+
+We go back to our business task: Determine how MEMBERS and CASUAL users use Cyclistic bikes differently. Let's also use the SMART questions we formulated earlier as our guide.
+
+STEP 5: Analyze using Power BI
+
+These are my plans in analyzing our data:
+
+     We use count of trip_id to get the total number of trips, which we'll later refer to as "Bike Activity"
+
+     We use the average of trip_duration (instead of sum) to further differentiate the user_type
+
+     We use ride_type or user_type as legends
+
+     We use pie, bar and line charts (just the simple charts) since these are more preferred by the Executives, our stakeholders
+
+     We use pie chart to find the value and percentage composition of each user_type
+
+     We use bar chart to further split user_type by ride_type
+
+     We also use bar chart and sort it in descending order to identify the top start_station_name
+
+     We use line chart to get the daily and weekly trends
+
+     We use shades of blue to differentiate user_type because I like blue
 
 
+The good thing about Power BI is that analysis and visualization go simultaneously. Cards visual can be used to instantly determine the Bike Activity and Average Trip Duration. You can use the Matrix visual to simulate a pivot table, which can be formatted into a heatmap.
 
+To be transparent, I also have other plans that I scrapped along the way because they're difficult to execute. For example, I tried plotting the start and end stations to visualize the routes majority of the users took, but I'm limited by what I currently know. I also drafted a heatmap for daily and weekly trends, but it ended up looking like an abstract art, and it did not show what I intend to emphasize.
+
+After discovering several insights and trends, let's make visualizations to impress the Executives!
+
+## Share: Create the Story
+
+We use the 10-second rule to assess if our visualizations are effective in communicating the message. As we mentioned in STEP 5.4, we'll just use simple charts like pies, bars and lines. Subtitles are also included to give our insights. I used MS PowerPoint to create appealing underlays complete with the company logo, headers, white boxes, side tabs and background. 
+
+Check out these screenshots from my Power BI output. 
+
+![](Assets\output-1-intro.png)
+
+![](Assets\output-2-users.png)
+
+![](Assets\output-3-trips.png)
+
+## Act: Give Actionable Insights & Recommendations
+
+Finally, we end our case study by sharing our insights and recommendations. Our statements must be clear, concise and consistent.
+
+Check out this screenshot from my Power BI output.
+
+![](Assets\output-4-insights.png)
+
+## Closing Remarks
+
+And by that we finally finished our very first case study! It took me a week to finalize the Power BI output and setup an online portfolio. The contents, and its delivery, might not be as polished and as optimized as I envision it to be, but I hope I gave a satisfactory output at the very least.
+
+The [Google Data Analytics](https://www.coursera.org/professional-certificates/google-data-analytics) course at Coursera is my entry point in the world of data analytics. There is so much more to learn and explore!
+
+To anyone reading this, thank you.
+
+## About the Data Analyst
+
+Paul Mendoza is a career shifter from the power industry. He aspires to become a data analyst in the hopes of fulfilling his dream of setting up a glorious pc with wide monitors. As someone said, "data is the new oil." But just like crude oil, we should apply the distillation process to obtain quality information ready to combust!
+
+
+``
 Introduction
 Background
 Tools I Used
 Analysis
 What I Learned
 Conclusions
+``
