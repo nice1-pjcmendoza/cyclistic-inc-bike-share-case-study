@@ -25,16 +25,18 @@ Cyclistic’s finance analysts have concluded that annual members are much more 
 Moreno has set a clear goal: Design marketing strategies aimed at converting casual riders into annual members. In order to do that, however, the marketing analyst team needs to better understand how annual members and casual riders differ, why casual riders would buy a membership, and how digital media could affect their marketing tactics. Moreno and her team are interested in analyzing the Cyclistic historical bike trip data to identify trends. 
 
 Three questions will guide the future marketing program:
-- How do annual members and casual riders use Cyclistic bikes differently?
-- Why would casual riders buy Cyclistic annual memberships?
-- How can Cyclistic use digital media to influence casual riders to become members?
+1. How do annual members and casual riders use Cyclistic bikes differently?
+
+2. Why would casual riders buy Cyclistic annual memberships?
+
+3. How can Cyclistic use digital media to influence casual riders to become members?
 
 ## Ask: State the Business Task
 
 Determine how **MEMBERS** and **CASUAL** users use Cyclistic bikes differently. Specifically:
-- Analyze the data and identify trends and patterns,
-- Create visualizations, and
-- Provide key findings and recommendations. 
+1. Analyze the data and identify trends and patterns,
+2. Create visualizations, and
+3. Provide key findings and recommendations. 
 
 Let's ask the SMART questions.
 
@@ -50,3 +52,142 @@ Let's ask the SMART questions.
 
 
 ## Prepare: Do the Datasets ROCCC?
+
+Cyclistic’s datasets can be downloaded [here](https://divvy-tripdata.s3.amazonaws.com/index.html). This case study covers the latest 12-month data available in the repository, i.e., April 2022 to March 2023. The files are first-party datasets owned, prepared and shared by Cyclistic with file naming format ‘YYYYMM-divvy-tripdata.csv’. Once stored locally, all 12 files have a total size of 1.03 GB!
+
+Let's be reminded that Cyclistic is a fictional company that represents a real-world organization. Its datasets are prepared to maintain anonymity. The data has been made available by Motivate International Inc. under this [license](https://ride.divvybikes.com/data-license-agreement).
+
+STEP 1: Download and Store the Datasets
+
+1. Download 12 zip files from the repository
+
+2. Extract the comma-separated values (CSV) files
+
+3. Save all 12 CSV files in a folder preferably without any irrelevant files
+
+4. Rename the CSV files to YYYYMM-divvy-tripdata.csv format for consistency
+
+
+Before we analyze the datasets, we should ask ourselves this first: "Does this data ROCCC?" 
+
+Reliable. Data is accurate, complete and unbiased. 
+
+Original. The datasets are first-party data owned, prepared and shared by Cyclistic.
+
+Comprehensive. Per case study guide, "... the datasets are appropriate and will enable to answer the business questions."
+
+Current. The repository is regularly updated to maintain relevance.
+
+Cited. The data has been made available by Motivate International Inc. under this license.
+
+The answer is YES so we can be sure that our datasets are unbiased and are credible. 
+
+And by that, we can now proceed with the next phase.
+
+## Process: Clean and Manipulate the Data
+
+My initial plan was to use SQL and Excel to extract, transform, load and visualize the datasets. I later opted to use Power BI instead because it can do all the steps (plus no need to import/export between software) and because I’m already proficient with it (at this point, Tableau is a no-go for me).
+
+I’ll try other combinations of tools I learned from the GDA course (i.e., SQL, Excel, R and Tableau), but that’s for another post.
+
+We start cleaning the data by merging the datasets into a single table first (as part of data wrangling). Since all 12 datasets have the same columns, this will be easy to execute.
+
+STEP 2: Load Data in Power Query Editor (PQE)
+
+     Open Power BI, then open the PQE by clicking the "Transform data" in the Home tab
+
+     In the PQE, click "New Source" > click "More" > "All" tab > click "Folder" 
+
+     Go to windows explorer > locate the CSV files you saved in STEP 1.3 > copy the directory
+
+     Go back to PQE > paste the directory in the "Folder path" field > hit "OK"
+
+     Check if all 12 CSV files are loaded > hit "Combine & Transform Data"
+
+     "Combine Files" window will appear > hit "OK"
+
+     All your data will now be loaded in the Power Query Editor.
+
+
+STEP 3: Transform Data in Power Query Editor
+
+         Remove the columns
+
+                Source.Name, start_station_id, end_station_id, end_station_name, start_lat, start_lng, end_lat,  end_lng
+
+         Rename the columns
+
+                rideable_type > ride_type
+
+                started_at > start_time
+
+                ended_at > end_time
+
+                member_casual > user_type
+
+         Replace values on each column
+
+                Column ride_type: right click column header > click "Replace Values..." > 
+
+electric_bike > Electric
+
+classic_bike > Classic
+
+docked_type > Docked
+
+                Column user_type: right click column header > click "Transform" > click "Capitalize Each Word"
+
+         Check each column's datatype
+
+
+STEP 4: Clean Data in Power Query Editor
+
+     Check each column for inconsistencies (impossible values, wrong spelling, errors, etc.) and nulls
+
+     Add custom columns
+
+            trip_duration: "Add Column" tab > hit "Custom Column" > type in the formula "[end_time]-[start_time]"
+
+> right click column header > click "Transform" > click "Total Minutes"
+
+            start_date: right click start_time column header > click "Duplicate Column" > find the duplicate > click "Transform" > click "Date Only"
+
+            start_hour: follow the previous step > click "Transform" > click "Hour" > hit "Hour"
+
+            day_of_week: follow the previous step > click "Transform" > click "Day" > hit "Day of Week"
+
+            day_SMTWTFS: follow the previous step > click "Transform" > click "Day" > hit "Name of Day"
+
+     Filter out outliers
+
+            Trip duration that are negative and less than 1 minute are physically impossible
+
+            We'll filter out other outliers in the next phase
+
+     Filter out empty observations/rows
+
+            Some start station rows are empty probably because the GPS did not work
+
+
+We removed several columns in STEP 3.1 because I preferred not to explore the geographical data at the moment. In Power BI, the latitude and longitude must be in decimal number format.
+
+Once we're satisfied with cleaning and manipulating, we hit "Close and Apply" and we return to Power BI for data analysis.
+
+### BEFORE
+
+![insert_caption](assets\process-1-after.png)
+*This image...*
+
+### AFTER
+![insert_caption](assets\process-1-after.png)
+*This image...*
+
+
+
+
+Introduction
+Background
+Tools I Used
+Analysis
+What I Learned
+Conclusions
