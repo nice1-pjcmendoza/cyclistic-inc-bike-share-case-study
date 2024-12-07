@@ -175,11 +175,11 @@ Once we're satisfied with cleaning and manipulating, we hit "Close and Apply" an
 
 ### BEFORE
 
-![insert_caption](assets\process-1-after.png)
+![insert_caption](Assets\process-1-after.png)
 *This image...*
 
 ### AFTER
-![insert_caption](assets\process-1-after.png)
+![insert_caption](Assets\process-1-after.png)
 *This image...*
 
 
