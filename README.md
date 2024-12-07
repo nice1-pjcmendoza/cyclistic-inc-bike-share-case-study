@@ -175,11 +175,11 @@ Once we're satisfied with cleaning and manipulating, we hit "Close and Apply" an
 
 ### BEFORE
 
-![Files Loaded in the Power Query Editor](Assets\process-1-after.png)
+![Files Loaded in the Power Query Editor](Assets/process-1-after.png)
 *This image...*
 
 ### AFTER
-![Data Transformed in the Power Query Editor](Assets\process-1-after.png)
+![Data Transformed in the Power Query Editor](Assets/process-1-after.png)
 *This image...*
 
 ## Analyze: Find Insights, Trends and Patterns
@@ -221,11 +221,11 @@ We use the 10-second rule to assess if our visualizations are effective in commu
 
 Check out these screenshots from my Power BI output. 
 
-![Introduction Slide](Assets\output-1-intro.png)
+![Introduction Slide](Assets/output-1-intro.png)
 
-![Users Slide](Assets\output-2-users.png)
+![Users Slide](Assets/output-2-users.png)
 
-![Trips Slide](Assets\output-3-trips.png)
+![Trips Slide](Assets/output-3-trips.png)
 
 ## Act: Give Actionable Insights & Recommendations
 
@@ -233,7 +233,7 @@ Finally, we end our case study by sharing our insights and recommendations. Our 
 
 Check out this screenshot from my Power BI output.
 
-![Insights Slide](Assets\output-4-insights.png)
+![Insights Slide](Assets/output-4-insights.png)
 
 ## Closing Remarks
 
